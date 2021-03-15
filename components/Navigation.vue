@@ -1,15 +1,15 @@
 <template>
   <div>
     <div class="nav nav--wide flex flex--justify-around">
-      <router-link to="/services">Services</router-link>
+      <NuxtLink to="/services">Services</NuxtLink>
       <div class="divider">&#9830;</div>
-      <router-link to="/explore">Explore</router-link>
-      <router-link to="/">
+      <NuxtLink to="/explore">Explore</NuxtLink>
+      <NuxtLink to="/">
         <div class="font--medium pad--all-10">Flaapworks</div>
-      </router-link>
-      <router-link to="/about">About</router-link>
+      </NuxtLink>
+      <NuxtLink to="/about">About</NuxtLink>
       <div class="divider">&#9830;</div>
-      <router-link to="/contact">Get In Touch</router-link>
+      <NuxtLink to="/contact">Get In Touch</NuxtLink>
     </div>
 
     <div class="nav nav--thin flex flex--justify-between">
@@ -23,11 +23,11 @@
         <div
           class="burger--items flex flex--direction-cols"
           v-bind:class="{ active: active }">
-          <router-link to="/">Flaapworks</router-link>
-          <router-link to="/services">Services</router-link>
-          <router-link to="/explore">Explore</router-link>
-          <router-link to="/about">About</router-link>
-          <router-link to="/contact">Get In Touch</router-link>
+          <NuxtLink to="/">Flaapworks</NuxtLink>
+          <NuxtLink to="/services">Services</NuxtLink>
+          <NuxtLink to="/explore">Explore</NuxtLink>
+          <NuxtLink to="/about">About</NuxtLink>
+          <NuxtLink to="/contact">Get In Touch</NuxtLink>
         </div>
       </div>
     </div>
