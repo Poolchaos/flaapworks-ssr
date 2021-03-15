@@ -1,65 +1,76 @@
 <template>
   <div class="explore" :class="deviceType">
-
     <transition name="slide-fade" mode="out-in">
-      <div class="flex--position-center-v mar--auto" v-if="isExploreHome" key="home">
+      <div v-if="isExploreHome" key="home" class="flex--position-center-v mar--auto">
         <img alt="Flaapworks logo" class="logo" src="../static/explore-150.png">
         <div class="flex flex--justify-around">
-
           <div id="hexcontainer" class="flex">
-
             <div class="hex1 hoverable">
               <div class="hex2">
-                <div class="hexlink" id="projects"
-                  @click="viewProjects()">
-                  <div class="hexcover"></div>
+                <div
+                  id="projects"
+                  class="hexlink"
+                  @click="viewProjects()"
+                >
+                  <div class="hexcover" />
                   <h3>Projects</h3>
-                  <div class="plus"></div>
+                  <div class="plus" />
                 </div>
               </div>
             </div>
             <div class="hex1 hoverable">
               <div class="hex2">
-                <div class="hexlink" id="technology"
-                  @click="viewTechnologies()">
-                  <div class="hexcover"></div>
+                <div
+                  id="technology"
+                  class="hexlink"
+                  @click="viewTechnologies()"
+                >
+                  <div class="hexcover" />
                   <h3>Tech</h3>
-                  <div class="plus"></div>
+                  <div class="plus" />
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </transition>
 
     <transition name="slide-fade" mode="out-in">
-      <div key="Projects" class="relative" v-if="isProjects">
-        <button class="btn--back font--large" title="Back"
-          @click="showExploreHome()">&#60;</button>
-        <Projects/>
+      <div v-if="isProjects" key="Projects" class="relative">
+        <button
+          class="btn--back font--large"
+          title="Back"
+          @click="showExploreHome()"
+        >
+          &#60;
+        </button>
+        <Projects />
       </div>
     </transition>
 
     <transition name="slide-fade" mode="out-in">
-      <div key="Technology" class="relative" v-if="isTechnologies">
-        <button class="btn--back font--large" title="Back"
-          @click="showExploreHome()">&#60;</button>
-        <Technologies/>
+      <div v-if="isTechnologies" key="Technology" class="relative">
+        <button
+          class="btn--back font--large"
+          title="Back"
+          @click="showExploreHome()"
+        >
+          &#60;
+        </button>
+        <Technologies />
       </div>
     </transition>
-
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import DeviceDetector, { DeviceDetectorResult } from 'device-detector-js'
 
 import Technologies from '../components/Technologies.vue'
 import Projects from '../components/Projects.vue'
 
-import DeviceDetector, { DeviceDetectorResult } from 'device-detector-js'
 const deviceDetector = new DeviceDetector()
 const device: DeviceDetectorResult = deviceDetector.parse(navigator.userAgent)
 
@@ -92,7 +103,7 @@ export default Vue.extend({
       },
 
       hideExploreHome () {
-        return new Promise(resolve => {
+        return new Promise((resolve) => {
           this.isExploreHome = false
           this.wait(this.slideTime, () => {
             resolve({})

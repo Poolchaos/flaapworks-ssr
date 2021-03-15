@@ -3,33 +3,34 @@
     <div class="flex--position-center-v mar--auto">
       <img alt="Flaapworks logo" class="logo" src="../static/services-150.png">
       <div class="flex flex--justify-around">
-
         <div id="hexcontainer" class="flex flex--direction-rows flex--justify-around flex--wrap">
-
-          <div class="hex1 hoverable" v-for="(item, index) in services" :key="index" :class="{ 'showHover' : item.selected }">
+          <div v-for="(item, index) in services" :key="index" class="hex1 hoverable" :class="{ 'showHover' : item.selected }">
             <div class="hex2">
-              <div class="hexlink" :id="item.id"
-                @click="select(item)">
-                <div class="hexcover"></div>
+              <div
+                :id="item.id"
+                class="hexlink"
+                @click="select(item)"
+              >
+                <div class="hexcover" />
                 <h3>{{ item.name }}</h3>
-                <div class="plus"></div>
+                <div class="plus" />
               </div>
             </div>
           </div>
-
         </div>
       </div>
       <div v-if="serviceIsSelected" class="flex flex--direction-cols services--selected">
         <span class="font--large mar--b-20"><b>{{ service.name }}</b></span>
         <span class="font--medium description">{{ service.description }}</span>
 
-          <NuxtLink :to="'/contact?id=' + service.id">
-            <button
-              class="hoverable font--large background--red text--white pad--all-20 mar--t-20 rounded-5"
-              click.trigger="getQuote()">
-              Get a <b>FREE</b> Quote
-            </button>
-          </NuxtLink>
+        <NuxtLink :to="'/contact?id=' + service.id">
+          <button
+            class="hoverable font--large background--red text--white pad--all-20 mar--t-20 rounded-5"
+            click.trigger="getQuote()"
+          >
+            Get a <b>FREE</b> Quote
+          </button>
+        </NuxtLink>
       </div>
     </div>
   </div>
@@ -41,7 +42,7 @@ import Vue from 'vue'
 import { SERVICES } from '../assets/enums/services'
 
 export default class Services extends Vue.extend({
-  data() {
+  data () {
     return {
       services: SERVICES
     }

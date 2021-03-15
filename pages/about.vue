@@ -1,65 +1,76 @@
 <template>
   <div class="about" :class="deviceType">
-
     <transition name="slide-fade" mode="out-in">
-      <div class="flex--position-center-v mar--auto" v-if="isAboutHome" key="home">
+      <div v-if="isAboutHome" key="home" class="flex--position-center-v mar--auto">
         <img alt="Flaapworks logo" class="logo" src="../static/about-150.png">
         <div class="flex flex--justify-around">
-
           <div id="hexcontainer" class="flex">
-
             <div class="hex1 hoverable">
               <div class="hex2">
-                <div class="hexlink" id="profile"
-                  @click="viewProfile()">
-                  <div class="hexcover"></div>
+                <div
+                  id="profile"
+                  class="hexlink"
+                  @click="viewProfile()"
+                >
+                  <div class="hexcover" />
                   <h3>Profile</h3>
-                  <div class="plus"></div>
+                  <div class="plus" />
                 </div>
               </div>
             </div>
             <div class="hex1 hoverable">
               <div class="hex2">
-                <div class="hexlink" id="testimonial"
-                  @click="viewTestimonials()">
-                  <div class="hexcover"></div>
+                <div
+                  id="testimonial"
+                  class="hexlink"
+                  @click="viewTestimonials()"
+                >
+                  <div class="hexcover" />
                   <h3>Testimonials</h3>
-                  <div class="plus"></div>
+                  <div class="plus" />
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </transition>
 
     <transition name="slide-fade" mode="out-in">
-      <div key="Profile" class="relative" v-if="isProfile">
-        <button class="btn--back font--large" title="Back"
-          @click="showAboutHome()">&#60;</button>
-        <Profile/>
+      <div v-if="isProfile" key="Profile" class="relative">
+        <button
+          class="btn--back font--large"
+          title="Back"
+          @click="showAboutHome()"
+        >
+          &#60;
+        </button>
+        <Profile />
       </div>
     </transition>
 
     <transition name="slide-fade" mode="out-in">
-      <div key="Testimonial" class="relative" v-if="isTestimonials">
-        <button class="btn--back font--large" title="Back"
-          @click="showAboutHome()">&#60;</button>
-        <Testimonials/>
+      <div v-if="isTestimonials" key="Testimonial" class="relative">
+        <button
+          class="btn--back font--large"
+          title="Back"
+          @click="showAboutHome()"
+        >
+          &#60;
+        </button>
+        <Testimonials />
       </div>
     </transition>
-
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import DeviceDetector, { DeviceDetectorResult } from 'device-detector-js'
 
 import Testimonials from '../components/Testimonials.vue'
 import Profile from '../components/Profile.vue'
 
-import DeviceDetector, { DeviceDetectorResult } from 'device-detector-js'
 const deviceDetector = new DeviceDetector()
 const device: DeviceDetectorResult = deviceDetector.parse(navigator.userAgent)
 
@@ -92,7 +103,7 @@ export default Vue.extend({
       },
 
       hideAboutHome () {
-        return new Promise(resolve => {
+        return new Promise((resolve) => {
           this.isAboutHome = false
           this.wait(this.slideTime, () => {
             resolve({})
