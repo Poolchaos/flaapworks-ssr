@@ -10,7 +10,8 @@
 
             <div class="hex1 hoverable">
               <div class="hex2">
-                <div class="hexlink" id="projects" @click="viewProjects()">
+                <div class="hexlink" id="projects"
+                  @click="viewProjects()">
                   <div class="hexcover"></div>
                   <h3>Projects</h3>
                   <div class="plus"></div>
@@ -19,7 +20,8 @@
             </div>
             <div class="hex1 hoverable">
               <div class="hex2">
-                <div class="hexlink" id="technology" @click="viewTechnologies()">
+                <div class="hexlink" id="technology"
+                  @click="viewTechnologies()">
                   <div class="hexcover"></div>
                   <h3>Tech</h3>
                   <div class="plus"></div>
@@ -34,14 +36,16 @@
 
     <transition name="slide-fade" mode="out-in">
       <div key="Projects" class="relative" v-if="isProjects">
-        <button class="btn--back font--large" title="Back" @click="showExploreHome()">&#60;</button>
+        <button class="btn--back font--large" title="Back"
+          @click="showExploreHome()">&#60;</button>
         <Projects/>
       </div>
     </transition>
 
     <transition name="slide-fade" mode="out-in">
       <div key="Technology" class="relative" v-if="isTechnologies">
-        <button class="btn--back font--large" title="Back" @click="showExploreHome()">&#60;</button>
+        <button class="btn--back font--large" title="Back"
+          @click="showExploreHome()">&#60;</button>
         <Technologies/>
       </div>
     </transition>

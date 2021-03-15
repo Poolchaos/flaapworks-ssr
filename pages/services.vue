@@ -8,7 +8,8 @@
 
           <div class="hex1 hoverable" v-for="(item, index) in services" :key="index" :class="{ 'showHover' : item.selected }">
             <div class="hex2">
-              <div class="hexlink" :id="item.id" @click="select(item)">
+              <div class="hexlink" :id="item.id"
+                @click="select(item)">
                 <div class="hexcover"></div>
                 <h3>{{ item.name }}</h3>
                 <div class="plus"></div>

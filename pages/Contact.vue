@@ -258,6 +258,7 @@ export default Vue.extend({
         axios.defaults.headers.post['Content-Type'] = 'application/json'
         axios
           .post('https://api.emailjs.com/api/v1.0/email/send', {
+            // This API requires snake_case properties
             // eslint-disable-next-line
             user_id: 'user_HB0sidICvn4VKjVvChK57',
             // eslint-disable-next-line

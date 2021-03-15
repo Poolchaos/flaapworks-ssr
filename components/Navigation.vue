@@ -18,7 +18,8 @@
         <span class="flex--position-center-v">Flaapworks</span>
       </div>
       <div
-        class="burger mar--all-10" @click="toggleBurger()">
+        class="burger mar--all-10"
+        @click="toggleBurger()">
         <div class="burger--handle hoverable">&#9776;</div>
         <div
           class="burger--items flex flex--direction-cols"

@@ -9,7 +9,8 @@
         <div class="hex1 hoverable" v-for="item in stack" :key="item.name" :title="item.label">
           <div class="hex2">
             <div class="hexlink skill">
-              <div class="hexcover hoverable" @click="navigate(item.link)"></div>
+              <div class="hexcover hoverable"
+              @click="navigate(item.link)"></div>
               <div class="image" :class="'image-' + item.name"></div>
             </div>
           </div>

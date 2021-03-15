@@ -8,7 +8,8 @@
 
         <div class="hex1 hoverable" :class="{ 'showHover' : isProfile }">
           <div class="hex2">
-            <div class="hexlink" id="profile" @click="viewProfile()">
+            <div class="hexlink" id="profile"
+              @click="viewProfile()">
               <div class="hexcover"></div>
               <h3>About</h3>
               <div class="plus"></div>
@@ -17,7 +18,8 @@
         </div>
         <div class="hex1 hoverable" :class="{ 'showHover' : isHistory }">
           <div class="hex2">
-            <div class="hexlink" id="testimonial" @click="viewHistory()">
+            <div class="hexlink" id="testimonial"
+              @click="viewHistory()">
               <div class="hexcover"></div>
               <h3>History</h3>
               <div class="plus"></div>

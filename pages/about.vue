@@ -10,7 +10,8 @@
 
             <div class="hex1 hoverable">
               <div class="hex2">
-                <div class="hexlink" id="profile" @click="viewProfile()">
+                <div class="hexlink" id="profile"
+                  @click="viewProfile()">
                   <div class="hexcover"></div>
                   <h3>Profile</h3>
                   <div class="plus"></div>
@@ -19,7 +20,8 @@
             </div>
             <div class="hex1 hoverable">
               <div class="hex2">
-                <div class="hexlink" id="testimonial" @click="viewTestimonials()">
+                <div class="hexlink" id="testimonial"
+                  @click="viewTestimonials()">
                   <div class="hexcover"></div>
                   <h3>Testimonials</h3>
                   <div class="plus"></div>
@@ -34,14 +36,16 @@
 
     <transition name="slide-fade" mode="out-in">
       <div key="Profile" class="relative" v-if="isProfile">
-        <button class="btn--back font--large" title="Back" @click="showAboutHome()">&#60;</button>
+        <button class="btn--back font--large" title="Back"
+          @click="showAboutHome()">&#60;</button>
         <Profile/>
       </div>
     </transition>
 
     <transition name="slide-fade" mode="out-in">
       <div key="Testimonial" class="relative" v-if="isTestimonials">
-        <button class="btn--back font--large" title="Back" @click="showAboutHome()">&#60;</button>
+        <button class="btn--back font--large" title="Back"
+          @click="showAboutHome()">&#60;</button>
         <Testimonials/>
       </div>
     </transition>
