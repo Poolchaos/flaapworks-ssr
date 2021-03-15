@@ -1,0 +1,296 @@
+/*------------------------------------*\
+  #THEME SETTINGS
+\*------------------------------------*/
+
+:root {
+  --red: #690c15;
+  --white: #ffffff;
+  --gray: #3f3f40;
+  
+  /* ---- font sizes ---- */
+  --tiny: 14px;
+  --small: 16px;
+  --medium: 20px;
+  --large: 28px;
+}
+
+.font {
+  &--tiny {
+    font-size: var(--tiny);
+  }
+  &--small {
+    font-size: var(--small);
+  }
+  &--medium {
+    font-size: var(--medium);
+  }
+  &--large {
+    font-size: var(--large);
+  }
+}
+
+.text {
+  &--red {
+    color: var(--red);
+  }
+  &--white {
+    color: var(--white);
+  }
+  &--gray {
+    color: var(--gray);
+  }
+}
+
+.background {
+  &--red {
+    background-color: var(--red);
+  }
+  &--white {
+    background-color: var(--white);
+  }
+  &--gray {
+    background-color: var(--gray);
+  }
+}
+
+/*------------------------------------*\
+  #GLOBAL SETTINGS
+\*------------------------------------*/
+
+html, body {
+  padding: 0;
+  margin: 0;
+  
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: var(--gray);
+  min-height: 100vh;
+}
+
+body {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.flex {
+  display: flex;
+
+  &--justify {
+    &-around {
+      justify-content: space-around;
+    }
+    &-between {
+      justify-content: space-between;
+    }
+  }
+
+  &--position {
+    &-center-h {
+      align-content: center;
+    }
+    &-center-v {
+      align-self: center;
+    }
+    &-end-v {
+      align-self: flex-end;
+    }
+  }
+
+  &--direction {
+    &-cols {
+      flex-direction: column;
+    }
+    &-rows {
+      flex-direction: row;
+    }
+  }
+
+  &--grow {
+    &-0 {
+      flex-grow: 0;
+    }
+    &-1 {
+      flex-grow: 1;
+    }
+  }
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+
+  &--fill {
+    flex-grow: 1;
+  }
+}
+
+.mar { //margin
+  &--auto {
+    margin: auto;
+  }
+  &--all {
+    &-10 {
+      margin: 10px;
+    }
+  }
+  &--t {
+    &-10 {
+      margin-top: 10px;
+    }
+    &-20 {
+      margin-top: 20px;
+    }
+  }
+  &--b {
+    &-10 {
+      margin-bottom: 10px;
+    }
+    &-20 {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.pad { // padding
+  &--all {
+    &-10 {
+      padding: 10px;
+    }
+    &-20 {
+      padding: 20px;
+    }
+  }
+  &--t {}
+  &--r {
+    &-20 {
+      padding-right: 20px;
+    }
+  }
+  &--b {
+    &-20 {
+      padding-bottom: 20px;
+    }
+  }
+  &--l {
+    &-20 {
+      padding-left: 20px;
+    }
+  }
+}
+
+.hoverable {
+  cursor: pointer;
+}
+
+.relative {
+  position: relative;
+}
+
+.btn {
+  &--back {
+    position: absolute;
+    top: -15px;
+    left: calc(50% - 40px - 100px);
+    width: 50px;
+    margin: 15px;
+    border: 0px;
+    background: var(--gray);
+    color: var(--white);
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+}
+
+/*------------------------------------*\
+  #GLOBAL SETTINGS
+\*------------------------------------*/
+
+form {
+  select {
+    width: 100%;
+    cursor: pointer;
+  }
+  option {
+    color: var(--gray);
+    background: var(--white);
+    font-size: var(--medium-font);
+  }
+  textarea {
+    resize: none;
+    min-height: 100px;
+    max-height: 500px;
+  }
+
+  input, textarea, select, option {
+    background: rgba(0, 0, 0, 0);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 2px;
+    border: 1px solid var(--gray);
+    color: var(--gray);
+
+    &.hasValue {
+      background: var(--gray);
+      color: var(--white);
+      
+      option {
+        color: var(--white);
+        background: var(--gray);
+        font-size: var(--medium-font);
+      }
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active
+{
+  box-shadow: 0 0 0 30px var(--gray) inset;
+ -webkit-box-shadow: 0 0 0 30px var(--gray) inset;
+ -webkit-text-fill-color: var(--white);
+}
+
+.error-wrap {
+  position: relative;
+  &:hover {
+    .error {
+      opacity: 0.4;
+    }
+  }
+}
+
+.error {
+  background: var(--red);
+  color: var(--white);
+  font-size: var(--tiny);
+  padding: 2px 4px;
+
+  &--top {
+    position: absolute;
+    top: 6px;
+  }
+
+  &--right {
+    position: absolute;
+    right: 1px;
+  }
+}
+
+button {
+  &:disabled {
+    background: var(--gray);
+    cursor: default;
+  }
+}
+
+.disable-select {
+  user-select: none; /* supported by Chrome and Opera */
+ -webkit-user-select: none; /* Safari */
+ -khtml-user-select: none; /* Konqueror HTML */
+ -moz-user-select: none; /* Firefox */
+ -ms-user-select: none; /* Internet Explorer/Edge */
+}
