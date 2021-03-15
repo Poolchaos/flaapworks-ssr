@@ -18,7 +18,9 @@
       <NuxtLink to="/about">
         About
       </NuxtLink>
-      <div class="divider">&#9830;</div>
+      <div class="divider">
+        &#9830;
+      </div>
       <NuxtLink to="/contact">
         Get In Touch
       </NuxtLink>
@@ -31,11 +33,15 @@
       </div>
       <div
         class="burger mar--all-10"
-        @click="toggleBurger()">
-        <div class="burger--handle hoverable">&#9776;</div>
+        @click="toggleBurger()"
+      >
+        <div class="burger--handle hoverable">
+          &#9776;
+        </div>
         <div
           class="burger--items flex flex--direction-cols"
-          v-bind:class="{ active: active }">
+          :class="{ active: active }"
+        >
           <NuxtLink to="/">
             Flaapworks
           </NuxtLink>
@@ -61,7 +67,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  data() {
+  data () {
     return {
       active: false,
 
