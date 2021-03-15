@@ -63,7 +63,7 @@ import DeviceDetector, { DeviceDetectorResult } from 'device-detector-js'
 const deviceDetector = new DeviceDetector()
 const device: DeviceDetectorResult = deviceDetector.parse(navigator.userAgent)
 
-export default Vue.extend ({
+export default Vue.extend({
   components: {
     Testimonials,
     Profile

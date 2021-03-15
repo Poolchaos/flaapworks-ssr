@@ -1,15 +1,27 @@
 <template>
   <div>
     <div class="nav nav--wide flex flex--justify-around">
-      <NuxtLink to="/services">Services</NuxtLink>
-      <div class="divider">&#9830;</div>
-      <NuxtLink to="/explore">Explore</NuxtLink>
-      <NuxtLink to="/">
-        <div class="font--medium pad--all-10">Flaapworks</div>
+      <NuxtLink to="/services">
+        Services
       </NuxtLink>
-      <NuxtLink to="/about">About</NuxtLink>
+      <div class="divider">
+        &#9830;
+      </div>
+      <NuxtLink to="/explore">
+        Explore
+      </NuxtLink>
+      <NuxtLink to="/">
+        <div class="font--medium pad--all-10">
+          Flaapworks
+        </div>
+      </NuxtLink>
+      <NuxtLink to="/about">
+        About
+      </NuxtLink>
       <div class="divider">&#9830;</div>
-      <NuxtLink to="/contact">Get In Touch</NuxtLink>
+      <NuxtLink to="/contact">
+        Get In Touch
+      </NuxtLink>
     </div>
 
     <div class="nav nav--thin flex flex--justify-between">
@@ -24,11 +36,21 @@
         <div
           class="burger--items flex flex--direction-cols"
           v-bind:class="{ active: active }">
-          <NuxtLink to="/">Flaapworks</NuxtLink>
-          <NuxtLink to="/services">Services</NuxtLink>
-          <NuxtLink to="/explore">Explore</NuxtLink>
-          <NuxtLink to="/about">About</NuxtLink>
-          <NuxtLink to="/contact">Get In Touch</NuxtLink>
+          <NuxtLink to="/">
+            Flaapworks
+          </NuxtLink>
+          <NuxtLink to="/services">
+            Services
+          </NuxtLink>
+          <NuxtLink to="/explore">
+            Explore
+          </NuxtLink>
+          <NuxtLink to="/about">
+            About
+          </NuxtLink>
+          <NuxtLink to="/contact">
+            Get In Touch
+          </NuxtLink>
         </div>
       </div>
     </div>
@@ -114,4 +136,5 @@ export default Vue.extend({
     }
   }
 }
+
 </style>

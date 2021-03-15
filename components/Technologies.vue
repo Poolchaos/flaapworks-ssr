@@ -3,10 +3,8 @@
   <div class="technology">
     <div class="flex--position-center-v mar--auto">
       <img alt="Flaapworks logo" class="logo" src="../static/testimonials-150.png">
-
       <div id="hexcontainer">
-
-        <div class="hex1 hoverable" v-for="item in stack" :key="item.name" :title="item.label">
+        <div v-for="item in stack" :key="item.name" :title="item.label" class="hex1 hoverable">
           <div class="hex2">
             <div class="hexlink skill">
               <div class="hexcover hoverable"
@@ -15,12 +13,9 @@
             </div>
           </div>
         </div>
-
       </div>
-
     </div>
   </div>
-
 </template>
 
 <script lang="ts">
@@ -28,7 +23,7 @@ import Vue from 'vue'
 
 import { TOOLS } from '../assets/enums/tools'
 
-export default Vue.extend ({
+export default Vue.extend({
   data () {
     return {
       stack: TOOLS,

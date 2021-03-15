@@ -45,7 +45,7 @@ import Vue from 'vue'
 
 import { TESTIMONIALS } from '../assets/enums/testimonials'
 
-export default Vue.extend ({
+export default Vue.extend({
   data () {
     return {
       testimonials: TESTIMONIALS
