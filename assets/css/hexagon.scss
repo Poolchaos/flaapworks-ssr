@@ -54,22 +54,22 @@
   background-size: cover;
 }
 
-#projects {background-image: url('../../assets/images/projects.jpg');}
-#technology {background-image: url('../../assets/images/technology.jpg');}
-#profile {background-image: url('../../assets/images/profile.jpg');}
-#testimonial {background-image: url('../../assets/images/testimonials.jpg');}
+#projects {background-image: url('../../static/projects.jpg');}
+#technology {background-image: url('../../static/technology.jpg');}
+#profile {background-image: url('../../static/profile.jpg');}
+#testimonial {background-image: url('../../static/testimonials.jpg');}
 
-#kornel {background-image: url('../../assets/images/kornel.jpg');}
-#marcel {background-image: url('../../assets/images/marcel.jpg');}
-#louise {background-image: url('../../assets/images/louise.jpg');}
-#james {background-image: url('../../assets/images/james.jpg');}
+#kornel {background-image: url('../../static/kornel.jpg');}
+#marcel {background-image: url('../../static/marcel.jpg');}
+#louise {background-image: url('../../static/louise.jpg');}
+#james {background-image: url('../../static/james.jpg');}
 
-#website {background-image: url('../../assets/images/website.jpg');}
-#webApplication {background-image: url('../../assets/images/webapp.jpg');}
-#brochure {background-image: url('../../assets/images/brochure.jpg');}
-#eCommerce {background-image: url('../../assets/images/ecommerce.jpg');}
-#seo {background-image: url('../../assets/images/seo.jpg');}
-#consulting {background-image: url('../../assets/images/consulting.jpg');}
+#website {background-image: url('../../static/website.jpg');}
+#webApplication {background-image: url('../../static/webapp.jpg');}
+#brochure {background-image: url('../../static/brochure.jpg');}
+#eCommerce {background-image: url('../../static/ecommerce.jpg');}
+#seo {background-image: url('../../static/seo.jpg');}
+#consulting {background-image: url('../../static/consulting.jpg');}
 
 .skill {
   background-position-x: unset;
@@ -78,7 +78,7 @@
   display: flex;
 
   .image {
-    background-image: url('../../assets/images/skill_sprites.webp');
+    background-image: url('../../static/skill_sprites.webp');
     width: 100px;
     height: 100px;
     min-height: 100px;

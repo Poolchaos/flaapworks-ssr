@@ -10,16 +10,17 @@
 import Vue from 'vue'
 
 import '../assets/css/main.scss';
+import '../assets/css/hexagon.scss';
 
 import Navigation from '../components/Navigation.vue';
 import Footer from '../components/Footer.vue';
 
-export default Vue.extend({
+export default class extends Vue.extend({
   components: {
     Navigation,
     Footer
   }
-})
+}) {}
 </script>
 
 <style lang="scss">

@@ -59,7 +59,7 @@ import DeviceDetector, { DeviceDetectorResult } from 'device-detector-js'
 const deviceDetector = new DeviceDetector()
 const device: DeviceDetectorResult = deviceDetector.parse(navigator.userAgent)
 
-export default class Footer extends Vue {
+export default class About extends Vue {
   static components = {
     // Testimonials,
     // Profile
