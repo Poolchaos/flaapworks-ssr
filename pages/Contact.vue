@@ -254,7 +254,6 @@ export default Vue.extend({
           requireDesign: this.requireDesign,
           message: this.message
         }
-        console.log(' ::>> submit ', emailContent)
 
         axios.defaults.headers.post['Content-Type'] = 'application/json'
         axios

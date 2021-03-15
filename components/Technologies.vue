@@ -6,12 +6,11 @@
 
       <div id="hexcontainer">
 
-        <div class="hex1 hoverable" v-for="item in stack" :key="item.name">
+        <div class="hex1 hoverable" v-for="item in stack" :key="item.name" :title="item.label">
           <div class="hex2">
             <div class="hexlink skill">
-              <div class="hexcover"></div>
+              <div class="hexcover hoverable" @click="navigate(item.link)"></div>
               <div class="image" :class="'image-' + item.name"></div>
-              <h3>{{ item.label }}</h3>
             </div>
           </div>
         </div>
@@ -31,7 +30,11 @@ import { TOOLS } from '../assets/enums/tools'
 export default Vue.extend ({
   data () {
     return {
-      stack: TOOLS
+      stack: TOOLS,
+
+      navigate (link: string) {
+        window.open(link, '_blank')
+      }
     }
   }
 })
