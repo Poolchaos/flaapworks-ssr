@@ -94,12 +94,12 @@
                 class="flex relative error-wrap"
               >
                 <input
-                    v-model="pages"
-                    type="number"
-                    placeholder="* Number of pages"
-                    class="small-font flex--fill"
-                    min="0"
-                    :class="{ 'hasValue' : pages !== null && pages !== '' }"
+                  v-model="pages"
+                  type="number"
+                  placeholder="* Number of pages"
+                  class="small-font flex--fill"
+                  min="0"
+                  :class="{ 'hasValue' : pages !== null && pages !== '' }"
                 >
               </div>
               <div
@@ -120,8 +120,8 @@
                 </div>
                 <textarea
                   id="text-area"
-                  class="small-font flex--fill"
                   v-model="message"
+                  class="small-font flex--fill"
                   type="text"
                   placeholder="* Add some notes or context"
                   :class="{ 'hasValue' : message.length }"
