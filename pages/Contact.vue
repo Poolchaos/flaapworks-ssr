@@ -26,11 +26,11 @@
                   v-if="errors.name"
                   class="error error--top error--right rounded-2"
                 >
-                  {{errors.name}}
+                  {{ errors.name }}
                 </div>
                 <input
-                  type="text"
                   v-model="name"
+                  type="text"
                   placeholder="* Enter Your Name"
                   class="small-font flex--fill gray white-text white-border"
                   :class="{ 'hasValue' : name.length }"
@@ -38,8 +38,8 @@
               </div>
               <div class="flex relative error-wrap">
                 <input
-                  type="text"
                   v-model="phone"
+                  type="text"
                   placeholder="   Number"
                   class="small-font flex--fill"
                   :class="{ 'hasValue' : phone.length }"
@@ -50,11 +50,11 @@
                   v-if="errors.email"
                   class="error error--top error--right rounded-2"
                 >
-                  {{errors.email}}
+                  {{ errors.email }}
                 </div>
                 <input
-                  type="text"
                   v-model="email"
+                  type="text"
                   placeholder="* Email"
                   class="small-font flex--fill"
                   :class="{ 'hasValue' : email.length }"
@@ -62,14 +62,14 @@
               </div>
               <div class="flex relative mar-5-20">
                 <select
-                  v-model="service"
                   v-if="$route.query.id"
+                  v-model="service"
                   :class="{ 'hasValue' : service }"
                 >
                   <option value="">
                     Choose...
                   </option>
-                  <option value='website'>
+                  <option value="website">
                     Website
                   </option>
                   <option value="webApplication">
@@ -93,13 +93,14 @@
                 v-if="$route.query.id && (service === 'website' || service === 'webApplication')"
                 class="flex relative error-wrap"
               >
-                <input type="number"
-                  v-model="pages"
-                  placeholder="* Number of pages"
-                  class="small-font flex--fill"
-                  min="0"
-                  :class="{ 'hasValue' : pages !== null && pages !== '' }"
-                />
+                <input
+                    v-model="pages"
+                    type="number"
+                    placeholder="* Number of pages"
+                    class="small-font flex--fill"
+                    min="0"
+                    :class="{ 'hasValue' : pages !== null && pages !== '' }"
+                >
               </div>
               <div
                 v-if="$route.query.id && (service !== 'seo' && service !== 'consulting')"
@@ -120,8 +121,8 @@
                 <textarea
                   id="text-area"
                   class="small-font flex--fill"
-                  type="text"
                   v-model="message"
+                  type="text"
                   placeholder="* Add some notes or context"
                   :class="{ 'hasValue' : message.length }"
                   @input="updateHeight()"
@@ -137,8 +138,8 @@
             <div class="dialog--footer pad-20">
               <div style="display: flex;justify-content: center;">
                 <button
-                  class="hoverable font--large background--red text--white pad--all-20 mar--t-20 rounded-5 relative"
                   v-if="!$route.query.id"
+                  class="hoverable font--large background--red text--white pad--all-20 mar--t-20 rounded-5 relative"
                   :disabled="submitted"
                   @click="submitContact()"
                 >
@@ -146,14 +147,13 @@
                 </button>
 
                 <button
-                  class="hoverable font--large background--red text--white pad--all-20 mar--t-20 rounded-5 relative"
                   v-if="$route.query.id"
+                  class="hoverable font--large background--red text--white pad--all-20 mar--t-20 rounded-5 relative"
                   :disabled="submitted"
                   @click="getQuote()"
                 >
                   Request a <b>FREE</b> Contact
                 </button>
-
               </div>
             </div>
           </div>

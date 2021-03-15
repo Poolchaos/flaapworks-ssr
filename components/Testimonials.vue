@@ -11,8 +11,8 @@
               <div class="hex1 hex1--small hoverable">
                 <div class="hex2">
                   <div
-                    class="hexlink"
                     :id="item.profile"
+                    class="hexlink"
                     @click="viewTestimonials()"
                   />
                 </div>

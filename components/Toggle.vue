@@ -2,7 +2,7 @@
   <div id="switch">
     <label class="switch flex">
       <label for="check" class="text font--small flex--position-center-v">{{ selected ? 'Yes' : 'No' }}</label>
-      <input v-model="selected" id="check" type="checkbox">
+      <input id="check" v-model="selected" type="checkbox">
       <span class="slider round" />
     </label>
   </div>
