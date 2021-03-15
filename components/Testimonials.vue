@@ -1,43 +1,41 @@
 <template>
-
   <div class="testimonials">
     <div class="flex--position-center-v mar--auto">
       <img alt="Flaapworks logo" class="logo" src="../static/testimonials-150.png">
 
       <div class="flex flex--wrap flex--justify-around record">
-
-        <div class="testimony" v-for="item in testimonials" :key="item.profile">
+        <div v-for="item in testimonials" :key="item.profile" class="testimony">
           <a class="flex flex--direction-rows inherit-text hoverable--underlined" :href="'https://www.linkedin.com/in/' + item.contactId + '/'" target="_blank">
 
             <div id="hexcontainer">
               <div class="hex1 hex1--small hoverable">
                 <div class="hex2">
-                  <div class="hexlink" :id="item.profile"
-                    @click="viewTestimonials()">
-                  </div>
+                  <div
+                    class="hexlink"
+                    :id="item.profile"
+                    @click="viewTestimonials()"
+                  />
                 </div>
               </div>
             </div>
 
             <div class="description flex flex--direction-cols">
-                <span class="font--medium name"><b>
-                  {{item.name}}
-                </b></span>
-                <span>{{item.position}}</span>
-                <span class="font--tiny">{{item.dateAndRelation}}</span>
+              <span class="font--medium name"><b>
+                {{ item.name }}
+              </b></span>
+              <span>{{ item.position }}</span>
+              <span class="font--tiny">{{ item.dateAndRelation }}</span>
             </div>
           </a>
           <span class="font--medium relative">
             <span class="font--large start-quote">&ldquo;</span>
-            {{item.testimony}}
+            {{ item.testimony }}
             <span class="font--large">&rdquo;</span>
           </span>
         </div>
-
       </div>
     </div>
   </div>
-
 </template>
 
 <script lang="ts">

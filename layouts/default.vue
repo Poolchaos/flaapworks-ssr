@@ -1,19 +1,19 @@
 <template>
   <div class="page-content flex flex--direction-cols flex--justify-between disable-select">
-    <Navigation/>
+    <Navigation />
     <Nuxt />
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 
-import '../assets/css/main.scss';
-import '../assets/css/hexagon.scss';
+import '../assets/css/main.scss'
+import '../assets/css/hexagon.scss'
 
-import Navigation from '../components/Navigation.vue';
-import Footer from '../components/Footer.vue';
+import Navigation from '../components/Navigation.vue'
+import Footer from '../components/Footer.vue'
 
 export default class extends Vue.extend({
   components: {

@@ -3,81 +3,129 @@
     <div class="flex--position-center-v mar--auto">
       <img alt="Flaapworks logo" class="logo" src="../static/quote-150.png">
       <div class="flex flex--justify-around flex--direction-cols mar--t-20 mar--b-20">
-
         <form class="vue-form" @submit.prevent="submit">
-
           <div class="dialog">
             <div class="dialog--header flex flex--direction-cols flex--justify-between pad-20">
-              <span v-if="!$route.query.id"
-                class="large-font red-text">How can we <b>HELP</b> you?</span>
-              <span v-if="$route.query.id"
-                class="large-font red-text">Get a <b>FREE</b> {{ $route.params.id }} Contact</span>
+              <span
+                v-if="!$route.query.id"
+                class="large-font red-text"
+              >
+                How can we <b>HELP</b> you?
+              </span>
+              <span
+                v-if="$route.query.id"
+                class="large-font red-text"
+              >
+                Get a <b>FREE</b> {{ $route.params.id }} Contact
+              </span>
             </div>
 
             <div class="dialog--content gray flex flex--direction-cols flexjustify---around">
               <div class="flex relative error-wrap">
-                <div class="error error--top error--right rounded-2"
-                  v-if="errors.name">{{errors.name}}</div>
-                <input type="text"
-                  placeholder="* Enter Your Name"
+                <div
+                  v-if="errors.name"
+                  class="error error--top error--right rounded-2"
+                >
+                  {{errors.name}}
+                </div>
+                <input
+                  type="text"
                   v-model="name"
+                  placeholder="* Enter Your Name"
                   class="small-font flex--fill gray white-text white-border"
-                  :class="{ 'hasValue' : name.length }" />
+                  :class="{ 'hasValue' : name.length }"
+                >
               </div>
               <div class="flex relative error-wrap">
-                <input type="text"
-                  placeholder="   Number"
+                <input
+                  type="text"
                   v-model="phone"
+                  placeholder="   Number"
                   class="small-font flex--fill"
-                  :class="{ 'hasValue' : phone.length }" />
+                  :class="{ 'hasValue' : phone.length }"
+                >
               </div>
               <div class="flex relative error-wrap">
-                <div class="error error--top error--right rounded-2"
-                  v-if="errors.email">{{errors.email}}</div>
-                <input type="text"
-                  placeholder="* Email"
+                <div
+                  v-if="errors.email"
+                  class="error error--top error--right rounded-2"
+                >
+                  {{errors.email}}
+                </div>
+                <input
+                  type="text"
                   v-model="email"
+                  placeholder="* Email"
                   class="small-font flex--fill"
-                  :class="{ 'hasValue' : email.length }" />
+                  :class="{ 'hasValue' : email.length }"
+                >
               </div>
               <div class="flex relative mar-5-20">
-                <select v-model="service"
+                <select
+                  v-model="service"
+                  v-if="$route.query.id"
                   :class="{ 'hasValue' : service }"
-                  v-if="$route.query.id">
-                  <option value="">Choose...</option>
-                  <option value='website'>Website</option>
-                  <option value="webApplication">Web Application</option>
-                  <option value="brochure">Brochure Site</option>
-                  <option value="eCommerce">E-Commerce</option>
-                  <option value="seo">SEO</option>
-                  <option value="consulting">Consulting</option>
+                >
+                  <option value="">
+                    Choose...
+                  </option>
+                  <option value='website'>
+                    Website
+                  </option>
+                  <option value="webApplication">
+                    Web Application
+                  </option>
+                  <option value="brochure">
+                    Brochure Site
+                  </option>
+                  <option value="eCommerce">
+                    E-Commerce
+                  </option>
+                  <option value="seo">
+                    SEO
+                  </option>
+                  <option value="consulting">
+                    Consulting
+                  </option>
                 </select>
               </div>
-              <div class="flex relative error-wrap"
-                v-if="$route.query.id && (service === 'website' || service === 'webApplication')">
+              <div
+                v-if="$route.query.id && (service === 'website' || service === 'webApplication')"
+                class="flex relative error-wrap"
+              >
                 <input type="number"
-                  placeholder="* Number of pages"
                   v-model="pages"
+                  placeholder="* Number of pages"
                   class="small-font flex--fill"
                   min="0"
-                  :class="{ 'hasValue' : pages !== null && pages !== '' }" />
+                  :class="{ 'hasValue' : pages !== null && pages !== '' }"
+                />
               </div>
-              <div class="flex flex--direction-rows"
-                v-if="$route.query.id && (service !== 'seo' && service !== 'consulting')">
-                <div class="flex--position-center-v pad--l-20 pad--r-20">Do you need a design?</div>
-                <Toggle @change="designCheck"/>
+              <div
+                v-if="$route.query.id && (service !== 'seo' && service !== 'consulting')"
+                class="flex flex--direction-rows"
+              >
+                <div class="flex--position-center-v pad--l-20 pad--r-20">
+                  Do you need a design?
+                </div>
+                <Toggle @change="designCheck" />
               </div>
               <div class="flex relative error-wrap">
-                <div class="error error--top error--right rounded-2"
-                  v-if="errors.message">{{errors.message}}</div>
-                <textarea type="text"
+                <div
+                  v-if="errors.message"
+                  class="error error--top error--right rounded-2"
+                >
+                  {{ errors.message }}
+                </div>
+                <textarea
                   id="text-area"
                   class="small-font flex--fill"
-                  placeholder="* Add some notes or context"
+                  type="text"
                   v-model="message"
+                  placeholder="* Add some notes or context"
                   :class="{ 'hasValue' : message.length }"
-                  v-on:input="updateHeight()"
-                ></textarea>
+                  @input="updateHeight()"
+                />
               </div>
             </div>
 
@@ -88,29 +136,28 @@
 
             <div class="dialog--footer pad-20">
               <div style="display: flex;justify-content: center;">
-
                 <button
                   class="hoverable font--large background--red text--white pad--all-20 mar--t-20 rounded-5 relative"
-                  @click="submitContact()"
+                  v-if="!$route.query.id"
                   :disabled="submitted"
-                  v-if="!$route.query.id">
+                  @click="submitContact()"
+                >
                   Submit
                 </button>
 
                 <button
                   class="hoverable font--large background--red text--white pad--all-20 mar--t-20 rounded-5 relative"
-                  @click="getQuote()"
+                  v-if="$route.query.id"
                   :disabled="submitted"
-                  v-if="$route.query.id">
+                  @click="getQuote()"
+                >
                   Request a <b>FREE</b> Contact
                 </button>
 
               </div>
             </div>
           </div>
-
         </form>
-
       </div>
     </div>
   </div>
@@ -119,27 +166,18 @@
 <script lang="ts">
 import Vue from 'vue'
 import axios from 'axios'
+import { init } from 'emailjs-com'
 
 import Toggle from '../components/Toggle.vue'
 
-import { init } from 'emailjs-com'
 init('user_HB0sidICvn4VKjVvChK57')
 
 export default Vue.extend({
   components: {
     Toggle
   },
-  mounted () {
-    this.$nextTick(() => {
-      if (this.$route.query.id) {
-        // eslint-disable-next-line
-        const service: any = this.$route.query.id
-        this.service = service
-      }
-    })
-  },
   data () {
-    let service: string | (string | null)[] = ''
+    const service: string | (string | null)[] = ''
     return {
       errors: { name: '', email: '', message: '' },
       submitted: false,
@@ -147,7 +185,7 @@ export default Vue.extend({
       name: '',
       phone: '',
       email: '',
-      service: service,
+      service,
       pages: null,
       requireDesign: false,
       message: '',
@@ -196,7 +234,6 @@ export default Vue.extend({
             this.errors.message = 'Please enter your message.'
             error = true
           }
-          console.log(' ::>> this.errors >>>> ', this.errors)
 
           if (error) {
             reject(new Error(''))
@@ -221,11 +258,9 @@ export default Vue.extend({
 
         this.validate()
           .then(() => {
-            console.log('form is valid')
             this.sendEmail()
           })
           .catch(() => {
-            console.log('form is invalid')
             this.submitted = false
           })
       },
@@ -235,11 +270,9 @@ export default Vue.extend({
 
         this.validate()
           .then(() => {
-            console.log('form is valid')
             this.sendEmail()
           })
           .catch(() => {
-            console.log('form is invalid')
             this.submitted = false
           })
       },
@@ -278,11 +311,19 @@ export default Vue.extend({
             }, 4000)
           })
           .catch(() => {
-            console.log(' ::>> failed to send email')
             this.submitted = false
           })
       }
     }
+  },
+  mounted () {
+    this.$nextTick(() => {
+      if (this.$route.query.id) {
+        // eslint-disable-next-line
+        const service: any = this.$route.query.id
+        this.service = service
+      }
+    })
   }
 })
 

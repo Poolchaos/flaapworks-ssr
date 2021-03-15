@@ -110,7 +110,6 @@ export default Vue.extend({
       },
 
       wait (waitTime: number, callback: () => void) {
-        console.log()
         setTimeout(() => {
           callback()
         }, waitTime)

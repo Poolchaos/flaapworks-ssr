@@ -1,5 +1,4 @@
 <template>
-
   <div class="technology">
     <div class="flex--position-center-v mar--auto">
       <img alt="Flaapworks logo" class="logo" src="../static/testimonials-150.png">
@@ -7,9 +6,11 @@
         <div v-for="item in stack" :key="item.name" :title="item.label" class="hex1 hoverable">
           <div class="hex2">
             <div class="hexlink skill">
-              <div class="hexcover hoverable"
-              @click="navigate(item.link)"></div>
-              <div class="image" :class="'image-' + item.name"></div>
+              <div
+                class="hexcover hoverable"
+                @click="navigate(item.link)"
+              />
+              <div class="image" :class="'image-' + item.name" />
             </div>
           </div>
         </div>
