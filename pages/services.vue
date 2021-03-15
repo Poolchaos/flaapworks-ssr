@@ -22,13 +22,13 @@
         <span class="font--large mar--b-20"><b>{{ service.name }}</b></span>
         <span class="font--medium description">{{ service.description }}</span>
 
-          <router-link :to="'/quote/' + service.id">
+          <NuxtLink :to="'/contact?id=' + service.id">
             <button
               class="hoverable font--large background--red text--white pad--all-20 mar--t-20 rounded-5"
               click.trigger="getQuote()">
               Get a <b>FREE</b> Quote
             </button>
-          </router-link>
+          </NuxtLink>
       </div>
     </div>
   </div>

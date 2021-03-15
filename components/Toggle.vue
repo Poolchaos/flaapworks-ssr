@@ -11,9 +11,13 @@
 <script lang="ts">
 import Vue from 'vue'
 
-export default class Toggle extends Vue {
-  selected = false
-}
+export default Vue.extend ({
+  data () {
+    return {
+      selected: false
+    }
+  }
+})
 </script>
 
 <style scoped lang="scss">

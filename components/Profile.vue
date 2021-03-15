@@ -60,21 +60,25 @@ import Vue from 'vue'
 
 import { EMPLOYMENT_HISTORY } from '../assets/enums/employment-history'
 
-export default class Profile extends Vue {
-  isProfile = true
-  isHistory = false
-  history = EMPLOYMENT_HISTORY
+export default Vue.extend ({
+  data () {
+    return {
+      isProfile: true,
+      isHistory: false,
+      history: EMPLOYMENT_HISTORY,
 
-  viewProfile () {
-    this.isProfile = true
-    this.isHistory = false
-  }
+      viewProfile () {
+        this.isProfile = true
+        this.isHistory = false
+      },
 
-  viewHistory () {
-    this.isProfile = false
-    this.isHistory = true
+      viewHistory () {
+        this.isProfile = false
+        this.isHistory = true
+      }
+    }
   }
-}
+})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

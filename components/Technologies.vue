@@ -28,9 +28,13 @@ import Vue from 'vue'
 
 import { TOOLS } from '../assets/enums/tools'
 
-export default class Technologies extends Vue {
-  stack = TOOLS
-}
+export default Vue.extend ({
+  data () {
+    return {
+      stack: TOOLS
+    }
+  }
+})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

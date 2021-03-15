@@ -1,27 +1,27 @@
 <template>
-  <div class="about" :class="deviceType">
+  <div class="explore" :class="deviceType">
 
     <transition name="slide-fade" mode="out-in">
-      <div class="flex--position-center-v mar--auto" v-if="isAboutHome" key="home">
-        <img alt="Flaapworks logo" class="logo" src="../static/about-150.png">
+      <div class="flex--position-center-v mar--auto" v-if="isExploreHome" key="home">
+        <img alt="Flaapworks logo" class="logo" src="../static/explore-150.png">
         <div class="flex flex--justify-around">
 
           <div id="hexcontainer" class="flex">
 
             <div class="hex1 hoverable">
               <div class="hex2">
-                <div class="hexlink" id="profile" @click="viewProfile()">
+                <div class="hexlink" id="projects" @click="viewProjects()">
                   <div class="hexcover"></div>
-                  <h3>Profile</h3>
+                  <h3>Projects</h3>
                   <div class="plus"></div>
                 </div>
               </div>
             </div>
             <div class="hex1 hoverable">
               <div class="hex2">
-                <div class="hexlink" id="testimonial" @click="viewTestimonials()">
+                <div class="hexlink" id="technology" @click="viewTechnologies()">
                   <div class="hexcover"></div>
-                  <h3>Testimonials</h3>
+                  <h3>Tech</h3>
                   <div class="plus"></div>
                 </div>
               </div>
@@ -33,16 +33,16 @@
     </transition>
 
     <transition name="slide-fade" mode="out-in">
-      <div key="Profile" class="relative" v-if="isProfile">
-        <button class="btn--back font--large" title="Back" @click="showAboutHome()">&#60;</button>
-        <Profile/>
+      <div key="Projects" class="relative" v-if="isProjects">
+        <button class="btn--back font--large" title="Back" @click="showExploreHome()">&#60;</button>
+        <Projects/>
       </div>
     </transition>
 
     <transition name="slide-fade" mode="out-in">
-      <div key="Testimonial" class="relative" v-if="isTestimonials">
-        <button class="btn--back font--large" title="Back" @click="showAboutHome()">&#60;</button>
-        <Testimonials/>
+      <div key="Technology" class="relative" v-if="isTechnologies">
+        <button class="btn--back font--large" title="Back" @click="showExploreHome()">&#60;</button>
+        <Technologies/>
       </div>
     </transition>
 
@@ -52,8 +52,8 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import Testimonials from '../components/Testimonials.vue'
-import Profile from '../components/Profile.vue'
+import Technologies from '../components/Technologies.vue'
+import Projects from '../components/Projects.vue'
 
 import DeviceDetector, { DeviceDetectorResult } from 'device-detector-js'
 const deviceDetector = new DeviceDetector()
@@ -61,47 +61,47 @@ const device: DeviceDetectorResult = deviceDetector.parse(navigator.userAgent)
 
 export default Vue.extend ({
   components: {
-    Testimonials,
-    Profile
+    Technologies,
+    Projects
   },
   data () {
     return {
       deviceType: device && device.device ? device.device.type : undefined,
 
       slideTime: 1000,
-      isAboutHome: true,
-      isProfile: false,
-      isTestimonials: false,
+      isExploreHome: true,
+      isProjects: false,
+      isTechnologies: false,
 
-      viewProfile () {
-        this.hideAboutHome()
+      viewProjects () {
+        this.hideExploreHome()
           .then(() => {
-            this.isProfile = true
+            this.isProjects = true
           })
       },
 
-      viewTestimonials () {
-        this.hideAboutHome()
+      viewTechnologies () {
+        this.hideExploreHome()
           .then(() => {
-            this.isTestimonials = true
+            this.isTechnologies = true
           })
       },
 
-      hideAboutHome () {
+      hideExploreHome () {
         return new Promise(resolve => {
-          this.isAboutHome = false
+          this.isExploreHome = false
           this.wait(this.slideTime, () => {
             resolve({})
           })
         })
       },
 
-      showAboutHome () {
-        this.isProfile = false
-        this.isTestimonials = false
+      showExploreHome () {
+        this.isProjects = false
+        this.isTechnologies = false
 
         this.wait(this.slideTime, () => {
-          this.isAboutHome = true
+          this.isExploreHome = true
         })
       },
 
@@ -118,7 +118,7 @@ export default Vue.extend ({
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.about {
+.explore {
   padding: 40px 0 50px 0;
 
   .logo {

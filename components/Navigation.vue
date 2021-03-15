@@ -37,21 +37,17 @@
 <script lang="ts">
 import Vue from 'vue'
 
-export default class extends Vue.extend({
+export default Vue.extend({
   data() {
     return {
-      active: false
+      active: false,
+
+      toggleBurger () {
+        this.active = !this.active
+      }
     }
   }
-}) {
-  currentRouteName () {
-    return this.$route.name !== 'Home' ? this.$route.name : 'Flaapworks'
-  }
-
-  toggleBurger () {
-    this.active = !this.active
-  }
-}
+})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

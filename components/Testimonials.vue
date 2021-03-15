@@ -44,9 +44,13 @@ import Vue from 'vue'
 
 import { TESTIMONIALS } from '../assets/enums/testimonials'
 
-export default class Testimonials extends Vue {
-  testimonials = TESTIMONIALS
-}
+export default Vue.extend ({
+  data () {
+    return {
+      testimonials: TESTIMONIALS
+    }
+  }
+})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
