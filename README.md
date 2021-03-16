@@ -1,5 +1,8 @@
 # flaapworks-ssr
 
+This project is an adaptation of my portfolio (https://github.com/Poolchaos/flaapworks-vue), which was built in vue3.
+As NUXTJS 3 is still in progress, I decided to clone and downgrade to vue2, which is this project.
+
 ## Build Setup
 
 ```bash
